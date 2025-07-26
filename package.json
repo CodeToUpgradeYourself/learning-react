@@ -1,0 +1,30 @@
+{
+  "name": "learning-react",
+  "version": "1.0.0",
+  "description": "Learning react for interview purpose and adding new skills to my arsenal",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeToUpgradeYourself/learning-react.git"
+  },
+  "keywords": [
+    "react",
+    "learning",
+    "interview"
+  ],
+  "author": "Satish Kr. Yadav",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeToUpgradeYourself/learning-react/issues"
+  },
+  "homepage": "https://github.com/CodeToUpgradeYourself/learning-react#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
