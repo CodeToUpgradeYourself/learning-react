@@ -1,6 +1,5 @@
-import ReactDOM from 'react-dom/client';
-
-const swiggyAPI = {
+import { CDN_URL } from './constants';
+export const swiggyAPI = {
   statusCode: 0,
   data: {
     statusMessage: 'done successfully',
@@ -7367,25 +7366,7 @@ const swiggyAPI = {
   csrfToken: 'Mw6opE3035FO-E58fHhzPFd7q723AkpzTV9JEZn4',
 };
 
-const imageBaseUrl =
-  'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660';
 const { cards } = swiggyAPI.data;
-const topResInDelhi = cards[1].card.card;
-const topResInDelhiList =
-  topResInDelhi.gridElements.infoWithStyle.restaurants.map((obj) => {
-    const { id, avgRating, cuisines, name, sla, cloudinaryImageId } = obj.info;
-    return {
-      id,
-      name,
-      cuisines: cuisines.join(','),
-      avgRating,
-      deliveryTime: sla.slaString,
-      imageUrl: `${imageBaseUrl}/${cloudinaryImageId}`,
-    };
-  });
-const topOnlineResInDelhi = cards[2].card.card;
-const headingOne = topResInDelhi.header.title;
-const headingTwo = topOnlineResInDelhi.title;
 const topOnlineResInDelhiList =
   cards[4].card.card.gridElements.infoWithStyle.restaurants.map((obj) => {
     const { id, avgRating, cuisines, name, sla, cloudinaryImageId } = obj.info;
@@ -7395,118 +7376,14 @@ const topOnlineResInDelhiList =
       cuisines: cuisines.join(','),
       avgRating,
       deliveryTime: sla.slaString,
-      imageUrl: `${imageBaseUrl}/${cloudinaryImageId}`,
+      imageUrl: `${CDN_URL}/${cloudinaryImageId}`,
     };
   });
-const topOnlineResInDelhiListData = [
+
+export const Heading = cards[2].card.card.title;
+export const Restaurants = [
   ...topOnlineResInDelhiList,
   ...topOnlineResInDelhiList,
   ...topOnlineResInDelhiList,
   ...topOnlineResInDelhiList,
 ];
-
-const Header = () => {
-  return (
-    <header>
-      <div className="logo">Learning</div>
-      <nav>
-        <a href="#">Search</a>
-        <a href="#">Offers</a>
-        <a href="#">Help</a>
-        <a href="#">Login</a>
-        <a href="#">Cart</a>
-      </nav>
-    </header>
-  );
-};
-
-const Search = () => {
-  return (
-    <div className="search-bar">
-      <input type="text" placeholder="Search for restaurants..." />
-      <button>Search</button>
-    </div>
-  );
-};
-
-const RestaurantCard = ({ resInfo }) => {
-  const { name, cuisines, avgRating, deliveryTime, imageUrl } = resInfo;
-  return (
-    <div className="restaurant-card">
-      <img src={imageUrl} />
-      <div className="restaurant-info">
-        <h3>{name}</h3>
-        <p>{cuisines}</p>
-        <p className="rating">
-          {avgRating} • {deliveryTime}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="container">
-      {/* <section>
-        <h2>{headingOne}</h2>
-        <div className="scroll-row">
-          {topResInDelhiList.map((resInfo) => {
-            return (
-              <RestaurantCard
-                key={resInfo.id}
-                resInfo={resInfo}
-              ></RestaurantCard>
-            );
-          })}
-        </div>
-      </section> */}
-      <section>
-        <h2>{headingTwo}</h2>
-        <Search></Search>
-        <div className="restaurant-grid">
-          {topOnlineResInDelhiListData.map((obj) => (
-            <RestaurantCard key={Math.random()} resInfo={obj}></RestaurantCard>
-          ))}
-        </div>
-      </section>
-    </div>
-  );
-};
-
-const Footer = () => {
-  return (
-    <footer>
-      <div>
-        <h4>Company</h4>
-        <a href="#">About Us</a>
-        <a href="#">Careers</a>
-        <a href="#">Team</a>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <a href="#">Help</a>
-        <a href="#">Partner with us</a>
-        <a href="#">Ride with us</a>
-      </div>
-      <div>
-        <h4>Legal</h4>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookie Policy</a>
-      </div>
-    </footer>
-  );
-};
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header></Header>
-      <Body></Body>
-      <Footer></Footer>
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<AppLayout></AppLayout>);

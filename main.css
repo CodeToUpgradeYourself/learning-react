@@ -100,10 +100,17 @@ h2 {
   gap: 20px;
   margin-top: 20px;
 }
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-right: 25px;
+}
+
 .search-bar {
   margin: 10px 0 20px;
   display: flex;
   gap: 10px;
+  width: 80%;
 }
 .search-bar input {
   flex: 1;
@@ -142,4 +149,27 @@ footer a {
 }
 footer a:hover {
   color: #fff;
+}
+
+.btn {
+  flex: 1;
+  background-color: #fc8019;
+  color: #fff;
+  padding: 5px 5px 5px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 10px 0 20px;
+}
+
+.btn:hover {
+  background-color: #e57012;
+}
+
+.btn:active {
+  transform: scale(0.97);
+  background-color: #d8650f;
 }

@@ -18,3 +18,15 @@
 - Tree Shaking (To remove un-used code)
 
 # Props (Properties)
+
+# Day 5 (Lets get hooked)
+
+- Clean the code by code splitting.
+- Export can be of two type: Default/Named Export.
+- One file can have only one default export.
+- React is fast in DOM manipulation.
+
+# React Hooks (Normal JS function given by React Library)
+
+- useState() // This is used to create superpowerful state variable
+- useEffect()
