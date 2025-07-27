@@ -1,3 +1,145 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 body {
-  background-color: aqua;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f8f8f8;
+  color: #333;
+}
+header {
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fc8019;
+}
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+h2 {
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+.scroll-row {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding-bottom: 1rem;
+}
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}
+.card,
+.restaurant-card {
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  text-align: center;
+}
+.card img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.card p {
+  margin-top: 6px;
+  font-size: 14px;
+}
+.restaurant-card {
+  width: 250px;
+  padding: 0;
+  overflow: hidden;
+}
+.restaurant-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+.restaurant-info {
+  padding: 10px;
+}
+.restaurant-info h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+.restaurant-info p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+}
+.restaurant-info .rating {
+  font-size: 13px;
+  color: #fc8019;
+  font-weight: bold;
+}
+.restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.search-bar {
+  margin: 10px 0 20px;
+  display: flex;
+  gap: 10px;
+}
+.search-bar input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+.search-bar button {
+  padding: 10px 20px;
+  background-color: #fc8019;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+footer {
+  background: #222;
+  color: #aaa;
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  font-size: 14px;
+}
+footer h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+footer a {
+  color: #aaa;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+}
+footer a:hover {
+  color: #fff;
 }

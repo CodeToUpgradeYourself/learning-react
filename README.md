@@ -16,3 +16,5 @@
 - Error Handling
 - HTTPS (You can host your code in https)
 - Tree Shaking (To remove un-used code)
+
+# Props (Properties)
