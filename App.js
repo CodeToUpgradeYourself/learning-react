@@ -1,23 +1,20 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
-const jsElement = document.createElement('h1');
-jsElement.innerHTML = 'Hello react from pure JS';
-const jsRoot = document.getElementById('pure-js');
-jsRoot.appendChild(jsElement);
 
-// React code to inject new element in the react js html div
+// React Element
+const Title = () => <h1>Hello World from JSX</h1>;
 
-const reactNode = React.createElement('div', { id: 'div3', key: 1 }, [
-  React.createElement(
-    'div',
-    { key: 4 },
-    React.createElement('h1', { key: 2 }, 'hello div 1 🚀')
-  ),
-  React.createElement(
-    'div',
-    { key: 5 },
-    React.createElement('h1', { key: 3 }, 'hello div 2')
-  ),
-]);
-const root = ReactDOM.createRoot(document.getElementById('react-js'));
-root.render(reactNode);
+// React Component
+const HeadingComponent = () => {
+  return (
+    <div id="container">
+      {/* // All of the below are the ways to render component */}
+      {Title()}
+      <Title />
+      <Title></Title>
+      <h1>This is React Functional Component</h1>
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<HeadingComponent></HeadingComponent>);
