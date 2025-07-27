@@ -11,7 +11,7 @@ const reactNode = React.createElement('div', { id: 'div3', key: 1 }, [
   React.createElement(
     'div',
     { key: 4 },
-    React.createElement('h1', { key: 2 }, 'hello div 1')
+    React.createElement('h1', { key: 2 }, 'hello div 1 🚀')
   ),
   React.createElement(
     'div',
